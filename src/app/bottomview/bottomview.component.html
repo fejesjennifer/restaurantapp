@@ -1,0 +1,50 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+          <ul>
+            <li>
+              <a [class.active]="filterBy == 'összes'" (click)="filterBy='összes'">
+                <font color="black">Összes</font>
+              </a>
+            </li>
+            <li>
+              <a [class.active]="filterBy == 'vegan'" (click)="filterBy='vegan'">
+                <font color="black">Vegán</font>
+              </a>
+            </li>
+            <li>
+              <a [class.active]="filterBy == 'vegetarian'" (click)="filterBy='vegetarian'">
+                <font color="black">Vegetáriánus</font>
+              </a>
+            </li>
+            <li>
+              <a [class.active]="filterBy == 'glutenfree'" (click)="filterBy='glutenfree'">
+                <font color="black">Gluténmentes</font>
+              </a>
+            </li>
+            <li>
+              <a [class.active]="filterBy == 'rawvegan'" (click)="filterBy='rawvegan'">
+                <font color="black">Raw-vegan</font>
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+      </h1>
+
+<div class="container">
+      <div class="columns">
+        <div class="column" >
+          <li class ="pictures" *ngFor="let image of (visibleImages | imageFilter: filterBy)"> 
+            <img src="{{image.url}}" class="tn" width="200" height="160">
+          </li>
+        </div>
+     </div>
+     
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<div class="card" *ngFor="let comment of comments | async">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{comment.title}}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {{comment.content}}
+    </div>
+  </div>
+</div>
+
+
+<br>
+<div class="field">
+  <label class="label">Adj értékelést az étteremről</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Név" [(ngModel)]="title">
+    <div class="control">
+      <textarea class="textarea" placeholder="Tartalom" [(ngModel)]="content"></textarea>
+    </div>
+  </div>
+  <br>
+  <div class="control">
+    <button class="button is-primary" (click)="createComment()">Submit</button>
+  </div>
+</div>
