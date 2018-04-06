@@ -39,7 +39,7 @@
       <div class="columns">
         <div class="column" >
           <li class ="pictures" *ngFor="let image of (visibleImages | imageFilter: filterBy)"> 
-            <img src="{{image.url}}" class="tn" width="200" height="160">
+            <a href="{{image.link}}"><img src="{{image.url}}" class="tn" width="200" height="160"></a>
           </li>
         </div>
      </div>

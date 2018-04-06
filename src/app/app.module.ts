@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { RouterModule, RouterLink, Router } from '@angular/router';
 import { ImageFilterPipe } from './image-detail/filter.pipe';
 import { AppComponent } from './app.component';
@@ -26,7 +26,16 @@ import { CommentSectionComponent } from './comment-section/comment-section.compo
 import { CommentService } from './services/comment.service';
 import { FormsModule } from '@angular/forms';
 import { GMapComponent } from './g-map/g-map.component';
+import { VeganloveComponent } from './veganlove/veganlove.component';
+import { HummusbarComponent } from './hummusbar/hummusbar.component';
+import { GoatComponent } from './goat/goat.component';
+import { NapfenyesComponent } from './napfenyes/napfenyes.component';
+import { EdeniComponent } from './edeni/edeni.component';
+import { SayComponent } from './say/say.component';
+import { DagobaComponent } from './dagoba/dagoba.component';
+import { CommonModule } from '@angular/common';
 
+import { AgmCoreModule } from '@agm/core';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBzQKzxbtt9p0il-L5xIV_g_jXEGP42iII",
@@ -54,10 +63,22 @@ export const firebaseConfig = {
     RestaurantDetailsComponent,
     LoginComponent,
     CommentSectionComponent,
-    GMapComponent
+    GMapComponent,
+    VeganloveComponent,
+    HummusbarComponent,
+    GoatComponent,
+    NapfenyesComponent,
+    EdeniComponent,
+    SayComponent,
+    DagobaComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCk1Tn_A0l2EsPq6-JzRCEgo0J5CmhoIuU'
+    }),
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
@@ -68,6 +89,13 @@ export const firebaseConfig = {
       { path: 'restaurant', component: RestaurantComponent },
       { path: 'details', component: RestaurantDetailsComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'veganlove', component: VeganloveComponent },
+      { path: 'hummusbar', component: HummusbarComponent },
+      { path: 'goat', component: GoatComponent },
+      { path: 'napfenyes', component: NapfenyesComponent },
+      { path: 'edeni', component: EdeniComponent },
+      { path: 'say', component: SayComponent },
+      { path: 'dagoba', component: DagobaComponent },
       { path: '**', redirectTo: 'home' },
 
 
